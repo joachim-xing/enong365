@@ -11,12 +11,14 @@ $_['text_update']       = '您的地址已更新';
 $_['text_delete']       = '您的地址已注销';
 
 // Entry
-$_['entry_firstname']   = '您的名字：';
+//$_['entry_firstname']   = '您的名字：';
+$_['entry_firstname']   = '&nbsp;&nbsp;&nbsp;您的姓名：';
 $_['entry_lastname']    = '您的姓氏：';
 $_['entry_company']     = '&nbsp;&nbsp;&nbsp;公司名称：';
 $_['entry_company_id']  = '公司注册号：';
 $_['entry_tax_id']      = '公司税号：';
-$_['entry_address_1']   = '地址 (1)：';
+//$_['entry_address_1']   = '地址 (1)：';
+$_['entry_address_1']   = '送货地址：';
 $_['entry_address_2']   = '&nbsp;&nbsp;&nbsp;地址 (2)：';
 $_['entry_postcode']    = '邮政编码：';
 $_['entry_city']        = '所在市区：';

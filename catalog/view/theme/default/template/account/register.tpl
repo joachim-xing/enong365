@@ -9,12 +9,13 @@
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-  <h1><?php echo $heading_title; ?></h1>
+  <!--<h1><?php echo $heading_title; ?></h1>--><h1></h1>
   <p><?php echo $text_account_already; ?></p>
   <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-    <h2><?php echo $text_your_details; ?></h2>
+    <h2><?php echo $text_your_register; ?></h2>
     <div class="content">
       <table class="form">
+          <!-- 取消注册信息中的名字信息
         <tr>
           <td><span class="required">*</span> <?php echo $entry_firstname; ?></td>
           <td><input type="text" name="firstname" value="<?php echo $firstname; ?>" />
@@ -29,6 +30,7 @@
             <span class="error"><?php echo $error_lastname; ?></span>
             <?php } ?></td>
         </tr>
+        -->
         <tr>
           <td><span class="required">*</span> <?php echo $entry_email; ?></td>
           <td><input type="text" name="email" value="<?php echo $email; ?>" />
@@ -43,12 +45,30 @@
             <span class="error"><?php echo $error_telephone; ?></span>
             <?php } ?></td>
         </tr>
+          <!-- 取消传真号码
         <tr>
           <td><?php echo $entry_fax; ?></td>
           <td><input type="text" name="fax" value="<?php echo $fax; ?>" /></td>
         </tr>
+        -->
+        <!--密码输入移至该处-->
+          <tr>
+              <td><span class="required">*</span> <?php echo $entry_password; ?></td>
+              <td><input type="password" name="password" value="<?php echo $password; ?>" />
+                  <?php if ($error_password) { ?>
+                  <span class="error"><?php echo $error_password; ?></span>
+                  <?php } ?></td>
+          </tr>
+          <tr>
+              <td><span class="required">*</span> <?php echo $entry_confirm; ?></td>
+              <td><input type="password" name="confirm" value="<?php echo $confirm; ?>" />
+                  <?php if ($error_confirm) { ?>
+                  <span class="error"><?php echo $error_confirm; ?></span>
+                  <?php } ?></td>
+          </tr>
       </table>
     </div>
+      <!--取消地址信息
     <h2><?php echo $text_your_address; ?></h2>
     <div class="content">
       <table class="form">
@@ -135,6 +155,8 @@
         </tr>
       </table>
     </div>
+    -->
+      <!--密码信息移至上面，和邮箱、手机号码放在一起
     <h2><?php echo $text_your_password; ?></h2>
     <div class="content">
       <table class="form">
@@ -154,6 +176,8 @@
         </tr>
       </table>
     </div>
+    -->
+      <!-- 取消订阅信息
     <h2><?php echo $text_newsletter; ?></h2>
     <div class="content">
       <table class="form">
@@ -173,6 +197,7 @@
         </tr>
       </table>
     </div>
+    -->
     <?php if ($text_agree) { ?>
     <div class="buttons">
       <div class="right"><?php echo $text_agree; ?>

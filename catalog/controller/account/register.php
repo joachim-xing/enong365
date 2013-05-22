@@ -62,6 +62,7 @@ class ControllerAccountRegister extends Controller {
 		
 		$this->data['text_account_already'] = sprintf($this->language->get('text_account_already'), $this->url->link('account/login', '', 'SSL'));
 		$this->data['text_your_details'] = $this->language->get('text_your_details');
+        $this->data['text_your_register'] = $this->language->get('text_your_register');
     	$this->data['text_your_address'] = $this->language->get('text_your_address');
     	$this->data['text_your_password'] = $this->language->get('text_your_password');
 		$this->data['text_newsletter'] = $this->language->get('text_newsletter');
@@ -350,13 +351,13 @@ class ControllerAccountRegister extends Controller {
   	}
 
   	protected function validate() {
-    	if ((utf8_strlen($this->request->post['firstname']) < 1) || (utf8_strlen($this->request->post['firstname']) > 32)) {
+    	/*if ((utf8_strlen($this->request->post['firstname']) < 1) || (utf8_strlen($this->request->post['firstname']) > 32)) {
       		$this->error['firstname'] = $this->language->get('error_firstname');
     	}
 
     	if ((utf8_strlen($this->request->post['lastname']) < 1) || (utf8_strlen($this->request->post['lastname']) > 32)) {
       		$this->error['lastname'] = $this->language->get('error_lastname');
-    	}
+    	}*/
 
     	if ((utf8_strlen($this->request->post['email']) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['email'])) {
       		$this->error['email'] = $this->language->get('error_email');
@@ -365,11 +366,18 @@ class ControllerAccountRegister extends Controller {
     	if ($this->model_account_customer->getTotalCustomersByEmail($this->request->post['email'])) {
       		$this->error['warning'] = $this->language->get('error_exists');
     	}
-		
+
+
     	if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
       		$this->error['telephone'] = $this->language->get('error_telephone');
     	}
-		
+        /*
+       if ($this->model_account_customer->getTotalCustomersByTelephone($this->request->post['telephone'])) {
+            $this->error['warning'] = $this->language->get('error_exists');
+        }
+        */
+
+        /*
 		// Customer Group
 		$this->load->model('account/customer_group');
 		
@@ -425,7 +433,7 @@ class ControllerAccountRegister extends Controller {
     	if (!isset($this->request->post['zone_id']) || $this->request->post['zone_id'] == '') {
       		$this->error['zone'] = $this->language->get('error_zone');
     	}
-
+        */
     	if ((utf8_strlen($this->request->post['password']) < 4) || (utf8_strlen($this->request->post['password']) > 20)) {
       		$this->error['password'] = $this->language->get('error_password');
     	}

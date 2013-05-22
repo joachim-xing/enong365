@@ -5,7 +5,7 @@
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-  <h1><?php echo $heading_title; ?></h1>
+  <!--<h1><?php echo $heading_title; ?></h1>--><h1></h1>
   <?php foreach ($downloads as $download) { ?>
   <div class="download-list">
     <div class="download-id"><b><?php echo $text_order; ?></b> <?php echo $download['order_id']; ?></div>

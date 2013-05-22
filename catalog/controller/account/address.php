@@ -178,7 +178,7 @@ class ControllerAccountAddress extends Controller {
 			if ($result['address_format']) {
       			$format = $result['address_format'];
     		} else {
-				$format = '{firstname} {lastname}' . "\n" . '{company}' . "\n" . '{address_1}' . "\n" . '{address_2}' . "\n" . '{city} {postcode}' . "\n" . '{zone}' . "\n" . '{country}';
+				$format = '姓名：&nbsp;&nbsp;&nbsp'.'{firstname} {lastname}' . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp" . '单位：&nbsp;&nbsp;&nbsp'.'{company}' . "\n" . '单位：&nbsp;&nbsp;&nbsp'. '{country}'. "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp". '{zone}'. "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp".'{city}'. "&nbsp;&nbsp;&nbsp".'{postcode}'. "\n". '地址：&nbsp;&nbsp;&nbsp'.'{address_1}';
 			}
 		
     		$find = array(
@@ -499,11 +499,11 @@ class ControllerAccountAddress extends Controller {
     	if ((utf8_strlen($this->request->post['firstname']) < 1) || (utf8_strlen($this->request->post['firstname']) > 32)) {
       		$this->error['firstname'] = $this->language->get('error_firstname');
     	}
-
+/*
     	if ((utf8_strlen($this->request->post['lastname']) < 1) || (utf8_strlen($this->request->post['lastname']) > 32)) {
       		$this->error['lastname'] = $this->language->get('error_lastname');
     	}
-
+*/
     	if ((utf8_strlen($this->request->post['address_1']) < 3) || (utf8_strlen($this->request->post['address_1']) > 128)) {
       		$this->error['address_1'] = $this->language->get('error_address_1');
     	}
@@ -523,10 +523,11 @@ class ControllerAccountAddress extends Controller {
 			
 			// VAT Validation
 			$this->load->helper('vat');
-			
+			/*
 			if ($this->config->get('config_vat') && !empty($this->request->post['tax_id']) && (vat_validation($country_info['iso_code_2'], $this->request->post['tax_id']) == 'invalid')) {
 				$this->error['tax_id'] = $this->language->get('error_vat');
-			}		
+			}
+			*/
 		}
 		
     	if ($this->request->post['country_id'] == '') {

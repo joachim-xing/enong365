@@ -12,8 +12,10 @@
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-  <h1><?php echo $heading_title; ?></h1>
+  <!--<h1><?php echo $heading_title; ?></h1>--><h1>6666</h1>
   <h2><?php echo $text_address_book; ?></h2>
+
+    <?php if(count($addresses)> 0){ ?>
   <?php foreach ($addresses as $result) { ?>
   <div class="content">
     <table style="width: 100%;">
@@ -24,6 +26,7 @@
     </table>
   </div>
   <?php } ?>
+    <?php }?>
   <div class="buttons">
     <div class="left"><a href="<?php echo $back; ?>" class="button"><?php echo $button_back; ?></a></div>
     <div class="right"><a href="<?php echo $insert; ?>" class="button"><?php echo $button_new_address; ?></a></div>

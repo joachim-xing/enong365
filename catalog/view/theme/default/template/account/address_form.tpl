@@ -5,29 +5,30 @@
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-  <h1><?php echo $heading_title; ?></h1>
+  <!--<h1><?php echo $heading_title; ?></h1>--><h1>55555</h1>
   <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
     <h2><?php echo $text_edit_address; ?></h2>
     <div class="content">
       <table class="form">
         <tr>
-          <td><span class="required">*</span> <?php echo $entry_firstname; ?></td>
+          <td><!--span class="required">*</span--> <?php echo $entry_firstname; ?></td>
           <td><input type="text" name="firstname" value="<?php echo $firstname; ?>" />
             <?php if ($error_firstname) { ?>
             <span class="error"><?php echo $error_firstname; ?></span>
             <?php } ?></td>
         </tr>
-        <tr>
+        <!--tr>
           <td><span class="required">*</span> <?php echo $entry_lastname; ?></td>
           <td><input type="text" name="lastname" value="<?php echo $lastname; ?>" />
             <?php if ($error_lastname) { ?>
             <span class="error"><?php echo $error_lastname; ?></span>
             <?php } ?></td>
-        </tr>
+        </tr-->
         <tr>
           <td><?php echo $entry_company; ?></td>
           <td><input type="text" name="company" value="<?php echo $company; ?>" /></td>
         </tr>
+        <!--
         <?php if ($company_id_display) { ?>
         <tr>
           <td><?php echo $entry_company_id; ?></td>
@@ -37,6 +38,7 @@
             <?php } ?></td>
         </tr>
         <?php } ?>
+
         <?php if ($tax_id_display) { ?>
         <tr>
           <td><?php echo $entry_tax_id; ?></td>
@@ -46,6 +48,7 @@
             <?php } ?></td>
         </tr>
         <?php } ?>
+        -->
         <tr>
           <td><span class="required">*</span> <?php echo $entry_address_1; ?></td>
           <td><input type="text" name="address_1" value="<?php echo $address_1; ?>" />
@@ -53,10 +56,10 @@
             <span class="error"><?php echo $error_address_1; ?></span>
             <?php } ?></td>
         </tr>
-        <tr>
+        <!--tr>
           <td><?php echo $entry_address_2; ?></td>
           <td><input type="text" name="address_2" value="<?php echo $address_2; ?>" /></td>
-        </tr>
+        </tr-->
         <tr>
           <td><span class="required">*</span> <?php echo $entry_city; ?></td>
           <td><input type="text" name="city" value="<?php echo $city; ?>" />
