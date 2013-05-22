@@ -30,8 +30,10 @@ class ControllerCommonHeader extends Controller {
 			$this->data['logo'] = $server . 'image/' . $this->config->get('config_logo');
 		} else {
 			$this->data['logo'] = '';
-		}		
-		
+		}
+
+        $this->data['phone'] = $server . 'image/data/phone.png';
+
 		$this->language->load('common/header');
 		
 		$this->data['text_home'] = $this->language->get('text_home');
@@ -42,6 +44,7 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
 		$this->data['text_account'] = $this->language->get('text_account');
     	$this->data['text_checkout'] = $this->language->get('text_checkout');
+        $this->data['text_order'] = $this->language->get('text_order');
 				
 		$this->data['home'] = $this->url->link('common/home');
 		$this->data['wishlist'] = $this->url->link('account/wishlist', '', 'SSL');
@@ -49,6 +52,7 @@ class ControllerCommonHeader extends Controller {
 		$this->data['account'] = $this->url->link('account/account', '', 'SSL');
 		$this->data['shopping_cart'] = $this->url->link('checkout/cart');
 		$this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+        $this->data['order'] = $this->url->link('account/order', '', 'SSL');
 		
 		// Daniel's robot detector
 		$status = true;

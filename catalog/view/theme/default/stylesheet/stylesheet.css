@@ -264,6 +264,19 @@ label {
 	width: 298px;
 	z-index: 15;
 }
+
+#header #phone {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 180px;
+    z-index: 15;
+    font-weight: bold;
+    color: #e27720;
+    font-size: 24px;
+    line-height: 20px;
+}
+
 #header .button-search {
 	position: absolute;
 	left: 0px;
@@ -289,8 +302,8 @@ label {
 }
 #header #welcome {
 	position: absolute;
-	top: 47px;
-	right: 0px;
+	top: 30px;
+	right: 200px;
 	z-index: 5;
 	width: 298px;
 	text-align: right;
@@ -930,8 +943,9 @@ ul.box-filter > li ul {
 	color: #333333;
 	text-decoration: none;
 	padding-left: 18px;
+    padding-top: 9px;
 	display: block;
-	background: url('../image/add.png') left center no-repeat;
+	background: url('../image/add.png') left bottom no-repeat;
 }
 .product-list .compare a {
 	color: #333333;

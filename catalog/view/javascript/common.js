@@ -36,6 +36,9 @@ $(document).ready(function() {
 			$(this).removeClass('active');
 		});
 	});
+
+
+
 	
 	/* Mega Menu */
 	$('#menu ul > li > a + div').each(function(index, element) {
@@ -145,12 +148,10 @@ function addToWishList(product_id) {
 						
 			if (json['success']) {
 				$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
-				
-				$('.success').fadeIn('slow');
+
 				
 				$('#wishlist-total').html(json['total']);
-				
-				$('html, body').animate({ scrollTop: 0 }, 'slow');
+
 			}	
 		}
 	});

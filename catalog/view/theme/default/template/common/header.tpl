@@ -56,10 +56,14 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
   <?php } ?>
   <?php echo $language; ?>
   <?php echo $currency; ?>
-  <?php echo $cart; ?>
+  <!--<?php echo $cart; ?>-->
+
+
+  <div id="phone"><img src="<?php echo $phone; ?>"> 4009-333-333</div>
+    <!--搜索框-->
   <div id="search">
-    <div class="button-search"></div>
-    <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
+    <!--div class="button-search"></div>
+    <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" /-->
   </div>
   <div id="welcome">
     <?php if (!$logged) { ?>
@@ -68,7 +72,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
     <?php echo $text_logged; ?>
     <?php } ?>
   </div>
-  <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
+  <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a></div>
 </div>
 <?php if ($categories) { ?>
 <div id="menu">
